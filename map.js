@@ -12,9 +12,10 @@ var males = pop.reduce((function(a, b) {return a + parseInt(b.males);}), 0);
 //% female
 var female_percent = Math.round(( females / (females + males) ) * 10000) / 100
 console.log("The percentage of females in the population is: " + female_percent + "%")
+document.getElementById("female").innerHTML = "The percentage of females in the population is: " + female_percent + "%";
 var male_percent = Math.round(( males / (females + males) ) * 10000) / 100
 console.log("The percentage of males in the population is: " + male_percent + "%")
-
+document.getElementById("male").innerHTML = "The percentage of males in the population is: " + male_percent + "%";
 
 //--------------MEDIAN AGE----------------------//
 //We should use reduce to build an ordered list
@@ -40,6 +41,7 @@ var calc_median = function() {
 }
 //calc_median();
 console.log("The median age is: " + calc_median());
+document.getElementById("median").innerHTML = "The median age is: " + calc_median();
 
 
 
@@ -51,8 +53,9 @@ var minor_pop = pop.filter( function(a) { return a.age < 18; })
 //console.log (minor_pop);
 var num_minors = minor_pop.reduce( function(a, b) { return a + b.total; }, 0);
 console.log("The number of minors is: " + num_minors);
+document.getElementById("minors").innerHTML = "The number of minors is: " + num_minors;
 
-    
+
 
 
 //Map is for applying a function to a list
